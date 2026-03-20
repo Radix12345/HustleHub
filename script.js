@@ -1,4 +1,20 @@
-// 1. Your Side Hustle Data
+// 1. Live Clock Logic
+function updateClock() {
+    const now = new Date();
+    const options = { 
+        weekday: 'short', 
+        month: 'short', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+    };
+    document.getElementById('live-clock').innerText = now.toLocaleString('en-US', options);
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// 2. Your Side Hustle Data
 const myHustles = [
     { name: "Prolific", status: "Active", note: "Check daily for high-paying studies." },
     { name: "Telus International", status: "Active", note: "Passed assessment! Watching for tasks." },
@@ -9,19 +25,17 @@ const myHustles = [
     { name: "Outlier", status: "Testing", note: "Onboarding steps: Import skills phase." }
 ];
 
-// 2. Wisdom Quotes (Naval & Jim Rohn)
+// 3. Wisdom Data
 const quotes = [
-    { text: "Specific knowledge is found by pursuing your genuine curiosity, resilience, and passion.", author: "Naval Ravikant" },
-    { text: "Don't wish it were easier, wish you were better.", author: "Jim Rohn" },
+    { text: "Trade money for time, not time for money. You're going to run out of time first.", author: "Naval Ravikant" },
+    { text: "Time is more valuable than money. You can get more money, but you cannot get more time.", author: "Jim Rohn" },
     { text: "Earn with your mind, not your time.", author: "Naval Ravikant" },
     { text: "Discipline is the bridge between goals and accomplishment.", author: "Jim Rohn" },
-    { text: "If you can't decide, the answer is no.", author: "Naval Ravikant" },
-    { text: "Formal education will make you a living; self-education will make you a fortune.", author: "Jim Rohn" }
+    { text: "The goal is to retire young and rich. 'Rich' means you have options, 'young' means you have time.", author: "Naval Ravikant" }
 ];
 
-// 3. Render the Table
+// Render Table
 const listContainer = document.getElementById('hustle-list');
-
 myHustles.forEach(hustle => {
     const row = document.createElement('tr');
     row.innerHTML = `
@@ -32,13 +46,10 @@ myHustles.forEach(hustle => {
     listContainer.appendChild(row);
 });
 
-// 4. Quote Functionality
+// Quote Function
 function getNewQuote() {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const quote = quotes[randomIndex];
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
     document.getElementById('quote-text').innerText = `"${quote.text}"`;
     document.getElementById('quote-author').innerText = `- ${quote.author}`;
 }
-
-// Show a quote on load
 getNewQuote();
