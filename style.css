@@ -58,3 +58,30 @@ button {
     transition: 0.2s;
 }
 button:hover { transform: scale(1.05); background: #14b8a6; }
+/* ... Keep your existing CSS and add these below ... */
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: white;
+}
+
+.btn-delete {
+    background: #ef4444;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
