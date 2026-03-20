@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hustle Hub | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Hustle Hub</h1>
+            <p>Tracking the grind in St. Stephen, NB</p>
+        </header>
+
+        <section class="tracker-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="hustle-list">
+                    </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section class="wisdom-section">
+            <h3>💡 Daily Wisdom</h3>
+            <div id="quote-display">
+                <p id="quote-text">"Loading wisdom..."</p>
+                <span id="quote-author"></span>
+            </div>
+            <button onclick="getNewQuote()">New Vibe</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
