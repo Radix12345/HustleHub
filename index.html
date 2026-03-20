@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hustle Hub | Dashboard</title>
+    <title>Hustle Hub Pro | Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🚀 Hustle Hub</h1>
-            <p>St. Stephen, NB | Total Ownership</p>
+            <h1>🚀 Hustle Hub Pro</h1>
             <div id="live-clock">Loading time...</div>
         </header>
+
+        <section class="input-section">
+            <input type="text" id="platform-name" placeholder="Platform Name (e.g. Outlier)">
+            <select id="platform-status">
+                <option value="Active">Active</option>
+                <option value="Waiting">Waiting</option>
+                <option value="Testing">Testing</option>
+            </select>
+            <input type="text" id="platform-note" placeholder="Quick note...">
+            <button onclick="addHustle()">Add Hustle</button>
+        </section>
 
         <section class="tracker-section">
             <table>
@@ -21,6 +31,7 @@
                         <th>Platform</th>
                         <th>Status</th>
                         <th>Notes</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody id="hustle-list">
